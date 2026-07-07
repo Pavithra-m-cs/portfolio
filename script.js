@@ -20,10 +20,10 @@ function type() {
     typing.textContent = current.substring(0, charIndex++);
   }
 
-  let speed = 120;
+  let speed = 60;
 
   if (!isDeleting && charIndex === current.length + 1) {
-    speed = 1800;
+    speed = 900;
 
     isDeleting = true;
   } else if (isDeleting && charIndex === 0) {
@@ -31,10 +31,36 @@ function type() {
 
     wordIndex = (wordIndex + 1) % words.length;
 
-    speed = 500;
+    speed = 200;
   }
 
   setTimeout(type, speed);
 }
 
 type();
+
+// Active Navigation Highlight
+
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav ul li a");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop - 120;
+    const sectionHeight = section.clientHeight;
+
+    if (scrollY >= sectionTop) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach((link) => {
+    link.classList.remove("active");
+
+    if (link.getAttribute("href") === "#" + current) {
+      link.classList.add("active");
+    }
+  });
+});

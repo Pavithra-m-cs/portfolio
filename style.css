@@ -68,6 +68,14 @@ nav ul li a:hover {
   color: #1e90ff;
 }
 
+nav ul li a.active {
+  color: #2563eb;
+}
+
+nav ul li a.active::after {
+  width: 100%;
+}
+
 .hero {
   min-height: 100vh;
   padding-top: 90px;
@@ -101,11 +109,13 @@ nav ul li a:hover {
 }
 
 .hero-image img {
-  width: 370px;
-  height: 370px;
-  border-radius: 50%;
+  width: 360px;
+  height: 360px;
   object-fit: cover;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+  object-position: center 20%;
+  border-radius: 50%;
+  border: 4px solid white;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
   animation: float 3s ease-in-out infinite;
 }
 
@@ -124,7 +134,10 @@ nav ul li a:hover {
 .hero-text h3 {
   font-size: 30px;
   color: #f59e0b;
-  height: 40px;
+  min-height: 45px;
+  margin-bottom: 20px;
+  display: inline-block;
+  min-width: 280px;
 }
 
 .hero-buttons {
@@ -274,7 +287,7 @@ nav ul li a:hover {
   justify-content: center;
   flex-wrap: wrap;
   gap: 30px;
-  font-size: 24px;
+  font-size: 22px;
 }
 
 .project-card {
@@ -413,7 +426,6 @@ footer {
 @media (max-width: 900px) {
   .hero-content {
     flex-direction: column-reverse;
-
     text-align: center;
   }
 
@@ -421,27 +433,33 @@ footer {
     text-align: center;
   }
 
-  .hero-image img {
-    width: 260px;
-
-    height: 260px;
-  }
-
-  .hero-text h1 {
-    font-size: 48px;
-  }
-
   nav {
     flex-direction: column;
-
     padding: 20px;
   }
 
   nav ul {
     margin-top: 20px;
-
     flex-wrap: wrap;
-
     justify-content: center;
   }
+}
+
+img {
+  max-width: 100%;
+}
+
+.project-card,
+.education-card,
+.internship-card,
+.about-box {
+  transition: all 0.3s ease;
+}
+
+.project-card:hover,
+.education-card:hover,
+.internship-card:hover,
+.about-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
