@@ -48,10 +48,10 @@ window.addEventListener("scroll", () => {
   let current = "";
 
   sections.forEach((section) => {
-    const sectionTop = section.offsetTop - 120;
-    const sectionHeight = section.clientHeight;
+    const sectionTop = section.offsetTop - 150;
+    const sectionHeight = section.offsetHeight;
 
-    if (scrollY >= sectionTop) {
+    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
       current = section.getAttribute("id");
     }
   });

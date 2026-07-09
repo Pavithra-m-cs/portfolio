@@ -12,6 +12,11 @@ body {
   background: #fff7f8;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 section {
   scroll-margin-top: 90px;
 }
@@ -22,7 +27,7 @@ nav {
   align-items: center;
   background: #1f2937;
   color: white;
-  padding: 20px 80px;
+  padding: 15px 20px;
 
   position: fixed;
   top: 0;
@@ -32,13 +37,15 @@ nav {
   z-index: 1000;
 }
 
+nav h2 {
+  font-size: 30px;
+  flex-shrink: 0;
+}
+
 nav ul {
   display: flex;
   list-style: none;
-}
-
-nav ul li {
-  margin-left: 30px;
+  gap: 20px;
 }
 
 nav ul li a {
@@ -78,7 +85,8 @@ nav ul li a.active::after {
 
 .hero {
   min-height: 100vh;
-  padding-top: 90px;
+  padding-top: 150px;
+  padding-bottom: 60px;
 
   display: flex;
   flex-direction: column;
@@ -127,12 +135,12 @@ nav ul li a.active::after {
 }
 
 .hero-text h1 {
-  font-size: 70px;
+  font-size: clamp(40px, 8vw, 70px);
   margin-bottom: 20px;
 }
 
 .hero-text h3 {
-  font-size: 30px;
+  font-size: clamp(20px, 5vw, 30px);
   color: #f59e0b;
   min-height: 45px;
   margin-bottom: 20px;
@@ -144,6 +152,9 @@ nav ul li a.active::after {
   margin-top: 30px;
   display: flex;
   gap: 20px;
+  width: auto;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .contact-btn {
@@ -155,6 +166,12 @@ nav ul li a.active::after {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.social-icons i {
+  margin-right: 8px;
+  font-size: 20px;
 }
 
 .social-icons a {
@@ -162,6 +179,8 @@ nav ul li a.active::after {
   font-weight: bold;
   color: #1f2937;
   transition: 0.3s;
+  display: inline-flex;
+  align-items: center;
 }
 
 .social-icons a:hover {
@@ -169,22 +188,9 @@ nav ul li a.active::after {
   transform: translateY(-3px);
 }
 
-.hero h1 {
-  font-size: 64px;
-  font-weight: 700;
-  color: black;
-}
-
-.hero h3 {
-  margin-top: 20px;
-  color: #f59e0b;
-  font-size: 28px;
-  font-weight: 600;
-  margin-top: 20px;
-}
-
 .hero p {
   margin-top: 20px;
+  width: auto;
   max-width: 700px;
   padding: 20px;
   line-height: 34px;
@@ -195,19 +201,23 @@ nav ul li a.active::after {
 }
 
 .btn {
-  display: inline-block;
-  margin-top: 30px;
-  padding: 15px 35px;
-  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 240px;
+  height: 55px;
+
   background: #2563eb;
   color: white;
-  cursor: pointer;
-  border-radius: 30px;
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
-  transition: all 0.3s ease;
-  font-size: 18px;
-  font-weight: 400;
   text-decoration: none;
+  border-radius: 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+
+  transition: 0.3s;
+
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .btn:hover {
@@ -222,7 +232,7 @@ nav ul li a.active::after {
 }
 
 #about h2 {
-  font-size: 40px;
+  font-size: 34px;
   margin-bottom: 30px;
 }
 
@@ -230,11 +240,14 @@ nav ul li a.active::after {
   max-width: 900px;
   margin: auto;
   background: white;
-  padding: 30px;
+  padding: 25px;
   border-radius: 15px;
   box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
-  line-height: 35px;
-  font-size: 20px;
+}
+
+.about-box p {
+  font-size: 18px;
+  line-height: 30px;
 }
 
 #skills {
@@ -245,7 +258,7 @@ nav ul li a.active::after {
 }
 
 #skills h2 {
-  margin-bottom: 40px;
+  margin-bottom: 34px;
 }
 
 .skills-container {
@@ -278,7 +291,7 @@ nav ul li a.active::after {
 }
 
 #projects h2 {
-  font-size: 40px;
+  font-size: 34px;
   margin-bottom: 40px;
 }
 
@@ -310,8 +323,8 @@ nav ul li a.active::after {
 }
 
 .project-card p {
-  line-height: 28px;
-  font-size: 22px;
+  line-height: 30px;
+  font-size: 18px;
 }
 
 #education {
@@ -321,7 +334,7 @@ nav ul li a.active::after {
 }
 
 #education h2 {
-  font-size: 40px;
+  font-size: 34px;
   margin-bottom: 40px;
 }
 
@@ -329,12 +342,12 @@ nav ul li a.active::after {
   max-width: 700px;
   margin: auto;
   background: white;
-  padding: 30px;
+  padding: 25px;
   border-radius: 15px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  line-height: 35px;
+  line-height: 30px;
   transition: 0.3s;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .education-card:hover {
@@ -353,7 +366,7 @@ nav ul li a.active::after {
 }
 
 #internship h2 {
-  font-size: 40px;
+  font-size: 34px;
   margin-bottom: 40px;
 }
 
@@ -362,12 +375,12 @@ nav ul li a.active::after {
   margin: auto;
   margin-top: 30px;
   background: white;
-  padding: 30px;
+  padding: 25px;
   border-radius: 15px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  line-height: 35px;
+  line-height: 30px;
   transition: 0.3s;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .internship-card:hover {
@@ -386,6 +399,10 @@ nav ul li a.active::after {
   background: #fff7f8;
 }
 
+#contact h2 {
+  font-size: 34px;
+}
+
 #contact p {
   margin: 15px 0;
   font-size: 20px;
@@ -399,6 +416,12 @@ nav ul li a.active::after {
 
 #contact p a:hover {
   text-decoration: underline;
+}
+
+.contact-btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
 }
 
 footer {
@@ -424,23 +447,48 @@ footer {
 }
 
 @media (max-width: 900px) {
+  nav {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  nav h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .hero {
+    padding-top: 180px;
+  }
+
   .hero-content {
     flex-direction: column-reverse;
     text-align: center;
+    gap: 30px;
   }
 
   .hero-text {
     text-align: center;
   }
 
-  nav {
-    flex-direction: column;
-    padding: 20px;
+  .hero-image img {
+    width: 250px;
+    height: 250px;
   }
 
-  nav ul {
-    margin-top: 20px;
-    flex-wrap: wrap;
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .social-icons {
     justify-content: center;
   }
 }
